@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Kumbh+Sans:wght@400;700&family=Overpass:wght@400;700&display=swap');
+
+:root {
+  --Soft-violet: hsl(273, 75%, 66%);
+  --Soft-blue: hsl(240, 73%, 65%);
+  --White: hsl(0, 0%, 100%);
+  --Very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --Dark-grayish-blue: hsl(240, 6%, 50%);
+
+  --Light-grayish-blue: hsl(240, 5%, 91%);
+
+  --Very-dark-desaturated-blue: hsl(238, 29%, 16%);
+  --Soft-red: hsl(14, 88%, 65%);
+
+  --Light-Grey: hsl(218, 20%, 25%);
+  --Medium-Grey: hsl(216, 12%, 54%);
+  --Dark-Blue: hsl(213, 19%, 18%);
+  --Very-Dark-Blue: hsl(216, 12%, 8%);
+
+}
+
+body {
+  box-sizing: border-box;
+  overflow: hidden;
+  font-family: 'Kumbh Sans', sans-serif;
+  background: linear-gradient(120deg, var(--Soft-violet), var(--Soft-blue));
+}
+
+.container {
+  width: 70%;
+  height: 70%;
+  border-radius: 30px;
+  box-shadow: 2px 10px 15px rgb(100, 100, 100);
+  background: var(--White);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.container>.imgBox>.img_1 {
+  width: 79.5%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-115%, -60%)
+}
+
+.container>.imgBox>.img_2 {
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-120%, -55%)
+}
+
+.img_3 {
+  width: 15%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-287%, -33%);
+  z-index: 2;
+}
+
+/* 
+*/
+
+.container>.textBox {
+  width: 40%;
+  margin: 5% 0 0 40%;
+}
+
+.container>.textBox>.questions {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1%;
+}
+
+.container>.textBox>.questions>div>button {
+  width: 100%;
+  height: 30px;
+  background: transparent;
+  color: var(--Very-dark-grayish-blue);
+  font-size: 15px;
+  text-align: left;
+  border: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.container>.textBox>.questions>div>button:hover {
+  color: var(--Soft-red);
+}
+
+.container>.textBox>.questions>div>button:focus {
+  font-weight: bold;
+}
+
+.container>.textBox>.questions>div>button::after {
+  content: url(./images/icon-arrow-down.svg);
+  float: right;
+  /* transition: all 2s ease-in-out; */
+}
+
+.container>.textBox>.questions>div>button::after:focus {
+  transform: rotate(180deg);
+}
+
+.container>.textBox>.questions>div>p {
+  font-size: 13px;
+  margin-left: 7px;
+  margin-block: 2px;
+  color: var(--Dark-grayish-blue);
+}
+
+.not-active {
+  display: none;
+  /* transition: 1s; */
+}
+
+.container>.textBox>.questions>hr {
+  width: 100%;
+  margin-block: 3%;
+  color: var(--Dark-grayish-blue);
+}
+
+@media only screen and (max-width: 550px) {
+  .container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8%;
+    overflow: visible;
+  }
+
+  .container>.textBox {
+    width: 100%;
+    margin-right: 40%;
+    /* background-color: red; */
+  }
+
+  .container>.imgBox>.img_1 {
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -180%)
+  }
+
+  .container>.imgBox>.img_2 {
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -280%)
+  }
+
+  .img_3 {
+    width: 15%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-150%, -540%);
+    z-index: 2;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .container>.textBox>.questions>div>button {
+    margin: 3%;
+  }
+
+  .container>.textBox>.questions>div>p {
+    margin: 3%;
+  }
+
+  .container>.textBox>.questions>div>hr {
+    margin: 3%;
+  }
+}
